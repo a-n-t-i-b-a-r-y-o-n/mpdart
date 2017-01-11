@@ -18,7 +18,9 @@ if [ $ec -eq 1 ]; then
         printf "\n"
         let l1=$l1-1
     done
-    printf "\t\tNo Artwork!"
+    printf "\t\t┏━━━━━━━━━━━━┓\n"
+    printf "\t\t┃ No Artwork!┃\n"
+    printf "\t\t┗━━━━━━━━━━━━┛\n"
     while [ $l2 -gt 0 ]; do
         printf "\n"
         let l2=$l2-1
