@@ -5,7 +5,7 @@ filename=$(mpc -f "%file%" | head -n 1)
 libprefix=${libprefix:25}       # This assumes your ~/.mpdconf stays the same
 filestr=${libprefix%$'\"'}$filename
 artfile="$HOME""/.ncmpcpp/.artwork.jpg"
-ffmpeg -y -hide_banner -i "${filestr}" "$artfile"
+ffmpeg -y -hide_banner -v -8 -i "${filestr}" "$artfile"
 ec=$?
 if [ $ec -eq 0 ]; then 
     imgcat "$artfile"
