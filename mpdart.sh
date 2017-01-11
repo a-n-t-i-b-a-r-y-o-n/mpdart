@@ -4,7 +4,7 @@ read -r libprefix < "$HOME""/.mpdconf"
 filename=$(mpc -f "%file%" | head -n 1)
 libprefix=${libprefix:25}       # This assumes your ~/.mpdconf stays the same
 filestr=${libprefix%$'\"'}$filename
-artfile="$HOME""/.ncmpcpp/.artwork.jpg"
+artfile="$HOME""/.ncmpcpp/.artwork.jpg"     # Feel free to change this value
 ffmpeg -y -hide_banner -v -8 -i "${filestr}" "$artfile"
 ec=$?
 if [ $ec -eq 0 ]; then 
