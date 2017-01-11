@@ -8,12 +8,15 @@ artfile="$HOME""/.ncmpcpp/.artwork.jpg"     # Feel free to change this value
 ffmpeg -y -hide_banner -v -8 -i "${filestr}" "$artfile"
 ec=$?
 if [ $ec -eq 0 ]; then 
+    tput clear
     imgcat "$artfile"
+    tput cup -5,`tput cols`
     exit $ec
 fi
 l1=$(tput lines)
 let l2=$l1/2
-if [ $ec -eq 1 ]; then 
+if [ $ec -eq 1 ]; then
+    tput clear 
     while [ $l1 -gt 0 ]; do 
         printf "\n"
         let l1=$l1-1
