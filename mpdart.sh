@@ -6,8 +6,7 @@ libprefix=${libprefix:25}       # This assumes your ~/.mpdconf stays the same
 filestr=${libprefix%$'\"'}$filename
 artfile="$HOME""/.ncmpcpp/.artwork.jpg"     # Feel free to change this value
 ffmpeg -y -hide_banner -v -8 -i "${filestr}" "$artfile"
-ec=$?
-if [ $ec -eq 1 ]; then
+if [ $? -eq 1 ]; then
     l1=$(tput lines)
     let l2=$l1/2
     tput clear 
@@ -22,7 +21,7 @@ if [ $ec -eq 1 ]; then
         printf "\n"
         let l2=$l2-1
     done
-    exit $ec
+    exit 1
 fi
 tput clear
 sleep 1     # Don't wanna create a race condition
