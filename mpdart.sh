@@ -40,9 +40,7 @@ while [ -e $mpddir/mpd.pid ]; do
     		printf "%0.s\n" $(seq 1 "$voffset")
 	else
 		tput clear
-		imgcat "$artfile"
-		#tput cup 0,0
-	
+		imgcat "$artfile"	
 	fi
 
 	if [ $single ]; then exit 0 ; fi
