@@ -2,7 +2,7 @@
 
 #Usage
 if [ "$#" -ge 1 ]; then
-        if [ $1 = "-x" ]; then single=true
+        if [ "$1" = "-x" ]; then single=true
 	else
                 printf "Usage: mpdart [options]\n\nOptions:\n\t-x :\tPrint once and exit\n\n"
 		exit 1
@@ -13,10 +13,10 @@ fi
 mpdconf="$HOME/.mpdconf"
 mpddir="$HOME/.mpd"
 artfile="$HOME/.ncmpcpp/.artwork.jpg"   # Feel free to change this value
-read -r libprefix < $mpdconf		# NOTE: avoid using "~" in library location or this doesn't work
+read -r libprefix < "$mpdconf"		# NOTE: avoid using "~" in library location or this doesn't work
 libprefix=${libprefix:25}       	# This assumes your ~/.mpdconf stays the same
 
-while [ -e $mpddir/mpd.pid ]; do
+while [ -e "$mpddir/mpd.pid" ]; do
 
 	filename=$(mpc -f "%file%%track%" | head -n 1)
 	# FIXME:  mpc seems to randomly put two weird characters on the end sometimes?
