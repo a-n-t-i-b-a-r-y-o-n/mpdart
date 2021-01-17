@@ -1,5 +1,9 @@
 # mpdart
 
+## !! No longer maintained !!
+I haven't touched this script in a while, as I no longer regularly use MPD for mp3 playback.
+Feel free to fork and hack away.
+
 
 This is a quick script to display the embedded artwork song that is currently playing on MPD.
 It does so by:
